@@ -15,6 +15,9 @@ import (
 	"github.com/rivo/tview"
 )
 
+// Version is the current version of the application, dynamically injected during release builds.
+var Version = "dev"
+
 // PanelState tracks state of left and right file panels
 type PanelState struct {
 	Table         *tview.Table
@@ -104,16 +107,24 @@ func main() {
 		}
 	}
 
-	// Set grids/layout (panels occupy the top row, maximizing space)
+	// Header bar: White text on DarkBlue background, displaying version
+	headerText := fmt.Sprintf(" MCPS (%s) - High-Performance Go Edition", Version)
+	header := tview.NewTextView()
+	header.SetTextColor(tcell.ColorWhite)
+	header.SetBackgroundColor(tcell.ColorDarkBlue)
+	header.SetText(headerText)
+
+	// Set grids/layout (panels occupy the middle row, maximizing space)
 	grid := tview.NewGrid().
-		SetRows(0, 1, 1).
+		SetRows(1, 0, 1, 1).
 		SetColumns(0, 0).
 		SetBorders(false)
 
-	grid.AddItem(leftTable, 0, 0, 1, 1, 0, 0, true)
-	grid.AddItem(rightTable, 0, 1, 1, 1, 0, 0, false)
-	grid.AddItem(promptLine, 1, 0, 1, 2, 0, 0, false)
-	grid.AddItem(footerTable, 2, 0, 1, 2, 0, 0, false)
+	grid.AddItem(header, 0, 0, 1, 2, 0, 0, false)
+	grid.AddItem(leftTable, 1, 0, 1, 1, 0, 0, true)
+	grid.AddItem(rightTable, 1, 1, 1, 1, 0, 0, false)
+	grid.AddItem(promptLine, 2, 0, 1, 2, 0, 0, false)
+	grid.AddItem(footerTable, 3, 0, 1, 2, 0, 0, false)
 
 	pages.AddPage("main", grid, true, true)
 

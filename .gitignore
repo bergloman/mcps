@@ -6,6 +6,7 @@
 *.dylib
 mcps-go/mcps.exe
 mcps-go/mcps
+/bin/
 
 # Test and coverage artifacts
 *.test
