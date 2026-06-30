@@ -1,12 +1,11 @@
 # MCPS
 
-This repository contains two lightweight, terminal-based clones of the classic Linux Midnight Commander tool:
-1. **PowerShell Version (`mcps-ps/mcps.ps1`):** A zero-dependency script designed for instant, portable use in PowerShell environments.
-2. **Go Version (`mcps-go/`):** A compiled, high-performance TUI implementation designed for zero screen flicker, instant folder queries, and native cross-platform speed.
+This repository contains a compiled, high-performance, terminal-based clone of the classic Linux Midnight Commander tool:
+- **Go Version (`mcps-go/`):** A compiled, high-performance TUI implementation designed for zero screen flicker, instant folder queries, and native cross-platform speed.
 
 ---
 
-## Features (Both Versions)
+## Features
 - **TUI Structure:** Gorgeous double-panel grid layout supporting simultaneous views of different directories.
 - **Tab Navigation:** Switch active panels instantly using the `Tab` key.
 - **F2 - Rename:** Simple, clean, and inline in-place file/directory renames.
@@ -22,7 +21,7 @@ This repository contains two lightweight, terminal-based clones of the classic L
 
 ## 🚀 Go Version (`mcps-go`)
 
-The Go version is built on top of the robust `tview` and `tcell` libraries. It resolves all rendering limits and flickering of PowerShell, offering massive speed improvements.
+The Go version is built on top of the robust `tview` and `tcell` libraries. It resolves all rendering limits and flickering of traditional shells, offering massive speed improvements.
 
 ### Requirements
 - Go 1.21 or newer.
@@ -60,16 +59,4 @@ To build the compiled high-performance binary:
   ./mcps
   ```
 
----
-
-## 🛠️ PowerShell Version (`mcps-ps`)
-
-A pure PowerShell script that runs directly in your terminal. Perfect for quick tasks where Go is not installed on the system.
-
-### Running the Script
-Ensure your execution policy allows running scripts locally, then execute:
-```powershell
-.\mcps-ps\mcps.ps1
-```
-
-By default, both versions open in your current working directory and display it in both panels.
+By default, the application opens in your current working directory and displays it in both panels.
