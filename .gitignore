@@ -1,0 +1,29 @@
+# Compiled Binaries (Go)
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+mcps-go/mcps.exe
+mcps-go/mcps
+
+# Test and coverage artifacts
+*.test
+*.out
+*.prof
+
+# OS specific files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*~
